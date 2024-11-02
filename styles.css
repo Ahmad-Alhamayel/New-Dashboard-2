@@ -107,10 +107,13 @@ body {
 .stats-container {
   display: flex;
   flex-direction: row;
-  /* Ensure layout is side-by-side on desktop */
+  /* Ensures side-by-side layout */
   gap: 2rem;
+  /* Space between the sections */
   align-items: stretch;
-  /* Makes both sections have equal height */
+  /* Ensures equal height */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .stats-table,
