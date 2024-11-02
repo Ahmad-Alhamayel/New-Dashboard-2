@@ -111,10 +111,9 @@ body {
   margin: 0 auto;
   display: flex;
   gap: 2rem;
-  align-items: center;
-  /* Add this line */
+  align-items: stretch;
+  /* Updated from center to stretch */
   text-align: center;
-  /* Add this line */
 }
 
 .stats-table,
@@ -134,22 +133,36 @@ body {
 
 .table-header {
   display: grid;
-  width: 80%;
-  grid-template-columns: 2.5fr 2.5fr 1fr;
+  width: 100%;
+  /* Updated to full width */
+  grid-template-columns: 3fr 2fr 1fr;
+  /* Adjusted column widths */
   padding: 1rem;
   border-bottom: 2px solid #eee;
   font-weight: bold;
   color: #b30004;
   font-size: 21px;
+  text-align: center;
+  /* Center-align headers */
 }
 
 .table-row {
-  width: 81%;
   display: grid;
+  width: 100%;
+  /* Full width for alignment */
   grid-template-columns: 3fr 2fr 1fr;
-  padding: 7px;
+  /* Align columns with headers */
+  padding: 0.5rem;
   border-bottom: 1px solid #c5c5c5;
   align-items: center;
+  text-align: center;
+  /* Center-align row content */
+}
+
+.percentage-cell,
+.count-cell {
+  justify-self: center;
+  /* Centers content within cells */
 }
 
 .cell {
@@ -825,6 +838,19 @@ body {
     padding: 1rem;
   }
 
+  /* Stack elements vertically and make them full width */
+  .stats-container {
+    flex-direction: column;
+  }
+
+  .time-filter,
+  .stats-table {
+    width: 100%;
+    /* Full width for both sections */
+    margin-bottom: 1rem;
+    /* Space between stacked elements */
+  }
+
   .table-row,
   .table-header {
     font-size: 0.9rem;
@@ -837,7 +863,6 @@ body {
   .table-row {
     width: 100%;
     padding: 0;
-    /* Remove padding */
     overflow: hidden;
     /* Prevents overflow of any element inside */
   }
@@ -845,19 +870,16 @@ body {
   .cell {
     align-items: center;
     padding: 0;
-    /* Remove padding inside cells */
   }
 
   .cell img {
     width: 24px;
     height: 24px;
     margin: 0;
-    /* Ensure no extra margin */
   }
 
   .image-cell {
     margin: 0;
-    /* Remove margin around images */
   }
 
   .candidates-container {
