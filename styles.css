@@ -145,9 +145,22 @@ body {
   font-weight: bold;
   color: #b30004;
   font-size: 21px;
-  text-align: center;
+  /* text-align: center; */
   /* Center-align headers */
 }
+.table-header .textAlignRight{
+  text-align :start;
+  margin-right: 10px;
+}
+
+.table-header .textAlignCenter{
+  text-align :center;
+  text-wrap: nowrap;
+}
+.table-header .padding {
+  margin-left: -10px;
+}
+
 
 .table-row {
   display: grid;
@@ -187,6 +200,7 @@ body {
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  z-index: 20;
 }
 
 .time-filter h2 {
@@ -227,8 +241,8 @@ body {
 }
 
 .apply-btn {
-  width: 100%;
-  padding: 5px;
+  width: 87%;
+  margin-left: 3px;
   background-color: #003087;
   color: white;
   border: none;
@@ -809,7 +823,10 @@ body {
     height: 100vh;
     min-height: 600px;
   }
-
+  .table-header .textAlignRight {
+      text-align: start;
+      margin-right: 25px;
+  }
   .overlay img {
     width: 90%;
     margin-top: 150px;
@@ -1010,8 +1027,9 @@ body {
   }
 
   .apply-btn {
-    padding: 0.5rem;
-    font-size: 0.9rem;
+      width: 81%;
+      padding: 0.5rem;
+      font-size: 0.9rem;
   }
 
   .date-inputs {

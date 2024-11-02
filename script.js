@@ -416,7 +416,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
   const chartDataArray = [
     {
       id: "myHorizontalBarChart",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Election Integrity")
         .map((x) => x.Harris)[0]
@@ -431,7 +431,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart2",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Charisma")
         .map((x) => x.Harris)[0]
@@ -446,7 +446,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart3",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Economy")
         .map((x) => x.Harris)[0]
@@ -461,7 +461,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart4",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Foreign Policy")
         .map((x) => x.Harris)[0]
@@ -476,7 +476,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart5",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Social Issues")
         .map((x) => x.Harris)[0]
@@ -491,7 +491,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart6",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Immigration")
         .map((x) => x.Harris)[0]
@@ -506,7 +506,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart7",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Healthcare")
         .map((x) => x.Harris)[0]
@@ -521,7 +521,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart8",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Environment")
         .map((x) => x.Harris)[0]
@@ -536,7 +536,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart0",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Election Integrity")
         .map((x) => x.Trump)[0]
@@ -551,7 +551,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart20",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Charisma")
         .map((x) => x.Trump)[0]
@@ -566,7 +566,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart30",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Economy")
         .map((x) => x.Trump)[0]
@@ -581,7 +581,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart40",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Foreign Policy")
         .map((x) => x.Trump)[0]
@@ -596,7 +596,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart50",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Social Issues")
         .map((x) => x.Trump)[0]
@@ -611,7 +611,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart60",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Immigration")
         .map((x) => x.Trump)[0]
@@ -626,7 +626,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart70",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Healthcare")
         .map((x) => x.Trump)[0]
@@ -641,7 +641,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart80",
-      labels: ["طبيعي", "سلبي", "ايجابي"],
+      labels: ["طبيعي", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Environment")
         .map((x) => x.Trump)[0]
@@ -921,7 +921,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><strong>ليس بديلاً عن الاستشارة المهنية:</strong> المعلومات والرؤى المقدمة هنا لا تعتبر بديلاً عن النصائح المهنية أو المالية أو القانونية أو السياسية. لأي قرارات شخصية أو مهنية، لذلك يرجى استشارة خبير مؤهل.</li>
               <li><strong>قيود الذكاء الاصطناعي والبيانات:</strong> استخدام الذكاء الاصطناعي في تحليل التوجهات العاطفية يعتمد على تقنيات معقدة ومتطورة. وبالتالي، فإن النتائج المقدمة هي نتائج تفسيرية وقد لا تعكس الصورة الكاملة لتوجهات الإعلام أو الرأي العام. يُرجى استخدام هذا البحث مع فهمٍ أنه يعتمد على البيانات المتاحة وطبيعة تقنيات الذكاء الاصطناعي المتطورة.</li>
             </ul>
-            <p>بدخولك إلى هذا الموقع، فإنك توافق على هذه الشروط وتدرك الطبيعة البحثية المستقلة للمشروع. لأي استفسارات أو ملاحظات، يُرجى التواصل معنا مباشرة.</p>
+            <p>بدخولك إلى هذا الموقع، فإنك تقر بأنك مدرك للطبيعة البحثية المستقلة للمشروع. لأي استفسارات أو ملاحظات، يُرجى التواصل معنا مباشرة.</p>
           </div>
         `,
     confirmButtonText: "موافق",
