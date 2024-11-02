@@ -1,5 +1,9 @@
-import { waitUntil } from "@vercel/functions";
 import mongoose from "mongoose";
+const polarityDataSchema = new mongoose.Schema(
+  {},
+  { collection: "PolarityData" }
+);
+const PolarityData = mongoose.model("PolarityData", polarityDataSchema);
 
 async function getData() {
   mongoose
@@ -8,11 +12,6 @@ async function getData() {
     .catch((err) => console.error(err));
 
   // Define schema and model for your collection
-  const polarityDataSchema = new mongoose.Schema(
-    {},
-    { collection: "PolarityData" }
-  );
-  const PolarityData = mongoose.model("PolarityData", polarityDataSchema);
 
   try {
     const data = await PolarityData.find({});
