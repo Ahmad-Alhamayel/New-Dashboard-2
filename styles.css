@@ -963,13 +963,13 @@ body {
   }
 
   .line-div {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    display: block;
-    box-sizing: border-box;
-    height: 400px;
-    width: 800px;
-    overflow-x: scroll;
+  margin-top: -15px;
+  margin-bottom: 30px;
+  display: block;
+  box-sizing: border-box;
+  height: 400px;
+  width: 800px;
+  overflow-x: scroll;
   }
 }
 
