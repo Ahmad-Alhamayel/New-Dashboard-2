@@ -790,6 +790,8 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+
+
   .hero-section {
     height: 100vh;
     min-height: 600px;
@@ -829,29 +831,14 @@ body {
 
   .table-row,
   .table-header {
+
     font-size: 0.9rem;
-  }
-
-  .table-marge {
-    margin-right: 0;
-    /* Prevents overflow on mobile */
-  }
-
-  .table-row {
-    width: 100%;
-    /* Ensures table rows fit within mobile screen */
-  }
-
-  .cell img {
-    width: 24px;
-    /* Reduced size for mobile */
-    height: 24px;
-    /* Reduced size for mobile */
   }
 
   .candidates-container {
     flex-direction: column;
     align-items: center;
+
   }
 
   .sub-subjects-div {
@@ -890,6 +877,10 @@ body {
     margin-bottom: 1rem;
   }
 
+  .table-marge {
+    margin-right: 0px;
+  }
+
   .donut-chart {
     position: relative;
     width: 250px;
@@ -918,6 +909,8 @@ body {
     width: 800px;
     overflow-x: scroll;
   }
+
+
 }
 
 @media screen and (max-width: 480px) {
