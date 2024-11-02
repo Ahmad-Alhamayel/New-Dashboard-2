@@ -1,4 +1,5 @@
 import { waitUntil } from "@vercel/functions";
+import mongoose from "mongoose";
 
 async function getData() {
   mongoose
@@ -21,25 +22,17 @@ async function getData() {
   }
 }
 
-export function GET(request) {
-  let dataToBeReturned;
-  waitUntil(
-    getData().then((data) => {
-      dataToBeReturned = data;
-      console.debug(data);
-    })
-  );
-  if (!dataToBeReturned)
-    return new Response(
-      { message: "Error retrieving data", error },
-      {
-        status: 500,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-  return new Response(dataToBeReturned, {
+export async function GET(request) {
+  const data = await getData();
+  console.debug(data);
+  if (!data)
+    return new Response(`{ message: "Error retrieving data" }`, {
+      status: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  return new Response(data, {
     status: 200,
     headers: {
       "Content-Type": "application/json",

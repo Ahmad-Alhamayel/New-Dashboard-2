@@ -1,0 +1,14 @@
+{
+  "name": "new-dashboard-2",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@vercel/functions": "^1.5.0",
+    "mongoose": "^8.8.0"
+  }
+}
