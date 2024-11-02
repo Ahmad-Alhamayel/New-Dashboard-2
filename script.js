@@ -100,22 +100,22 @@ const monthTranslations = {
   };
   
   // Initialize a socket connection
-  const socket = io('http://localhost:5000');
+//   const socket = io('http://localhost:5000');
   
-  // Set up a listener for initial data if required
-  socket.on('initialPolarityData', (data) => {
-    updateDataAndFilter(data);
-  });
+//   // Set up a listener for initial data if required
+//   socket.on('initialPolarityData', (data) => {
+//     updateDataAndFilter(data);
+//   });
   
-  // Set up a listener for real-time updates
-  socket.on('polarityDataUpdated', (change) => {
-    console.log('Real-time data update received:', change);
-    loadDataAndFilter(); // Fetch the latest data from the server
-  });
+//   // Set up a listener for real-time updates
+//   socket.on('polarityDataUpdated', (change) => {
+//     console.log('Real-time data update received:', change);
+//     loadDataAndFilter(); // Fetch the latest data from the server
+//   });
   
   // Function to load data and apply filters
   function loadDataAndFilter() {
-    fetch('http://localhost:5000/api/polaritydata')
+    fetch('/api/polaritydata')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -156,7 +156,7 @@ const monthTranslations = {
   }
   
   // Optionally, load initial data when the page loads
-  loadDataAndFilter();
+//   loadDataAndFilter();
   
   function getFirstDataSet(filteredData) {
       // Count occurrences of each topic

@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const http = require('http');
 
 const app = express();
 
@@ -27,6 +28,11 @@ app.get('/api/polaritydata', async (req, res) => {
         res.status(500).json({ message: "Error retrieving data", error });
     }
 });
+
+// const server = http.createServer(app);
+// server.listen(5000, () => {
+//   console.log(`Server is listening on port ${5000}`);
+// });
 
 // Export the app for serverless function in Vercel
 module.exports = app;
