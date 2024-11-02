@@ -20,12 +20,15 @@
 
 <body>
 
-    <header class="hero-section">
-        <div class="overlay">
-            <img src="assets/images/Title.png" alt="">
+
+    <div class="header-div">
+        <img src="assets/images/header.jpg" width="100%">
+
+        <div class="countdownn-div">
+            <img src="assets/images/Title.png" width="50%">
             <div class="countdown-container">
                 <div class="time-unit">
-                    <span class="label">اليوم</span>
+                    <span class="label">يوم</span>
                     <span class="number" id="days">4</span>
                     <span class="separator">▸◂</span>
                 </div>
@@ -45,9 +48,8 @@
                 </div>
             </div>
         </div>
-
-    </header>
-
+            
+    </div>
 
 
 
@@ -146,6 +148,13 @@
                         والتباين، الوصف، المشكلة والحل والتسلسل. يمكن للطلاب تعلم التعرف على بنية النص من خلال تحليل
                         كلمات الإشارة الموجودة في النص.</p>
 
+                </div>
+                <div class="candidates-comparison">
+                    <div class="donut-chart">
+                        <div class="chart-container">
+                            <canvas id="myDonutChart"></canvas>
+                        </div>
+                    </div>
                     <div class="main-div-names">
                         <div class="sub-div-name-one">
                             <p class="p-name-one">كامالا هاريس</p>
@@ -155,14 +164,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="candidates-comparison">
-                    <div class="donut-chart">
-                        <div class="chart-container">
-                            <canvas id="myDonutChart"></canvas>
-                        </div>
-                    </div>
-                </div>
             </div>
+                    
         </div>
 
         <div class="subjects-main-div">
@@ -332,13 +335,13 @@
 
     <div class="float-contact">
         <button class="contact-btn" onclick="togglePopup()">تواصل معنا</button>
-    
+
         <div class="contact-popup" id="contactPopup">
             <div class="popup-header">
                 <h3>معلومات التواصل</h3>
                 <button class="close-btn" onclick="togglePopup()">×</button>
             </div>
-    
+
             <div class="popup-content">
                 <div class="contact-card">
                     <div class="contact-name">Ahmad Alhamayel</div>
@@ -349,11 +352,12 @@
                         </div>
                         <div>
                             <span>LinkedIn:</span>
-                            <a href="https://www.linkedin.com/in/ahmad-alhamayel-3a9a79180/" target="_blank">LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/ahmad-alhamayel-3a9a79180/" target="_blank">LinkedIn
+                                Profile</a>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="contact-card">
                     <div class="contact-name">Fahad Jubair</div>
                     <div class="contact-info">
@@ -363,7 +367,8 @@
                         </div>
                         <div>
                             <span>LinkedIn:</span>
-                            <a href="https://www.linkedin.com/in/fahed-jubair-52b84882/" target="_blank">LinkedIn Profile</a>
+                            <a href="https://www.linkedin.com/in/fahed-jubair-52b84882/" target="_blank">LinkedIn
+                                Profile</a>
                         </div>
                     </div>
                 </div>

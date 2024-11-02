@@ -13,37 +13,23 @@ body {
   width: 100%;
 }
 
-.hero-section {
+.header-div {
+  display: flex;
   position: relative;
-  width: 100%;
-  height: 1614px;
-  background-image: url('assets/images/header.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100vh;
 }
 
-.hero-section .overlay {
+.countdownn-div {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: white;
+  bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  width: 100%;
 }
 
-.overlay img {
-  width: 50%;
-  margin-top: 385px;
-}
-
-/* Countdown styling */
 .countdown-container {
   display: flex;
   gap: 1.5rem;
@@ -242,14 +228,18 @@ body {
 
 .line-div {
   position: relative;
-  width: 100%; /* Full width */
-  height: 400px; /* Height of the chart */
+  width: 100%;
+  /* Full width */
+  height: 400px;
+  /* Height of the chart */
   padding: 20px;
 }
 
 #myLineChart {
-  width: 100% !important; /* Ensure canvas takes full width */
-  height: auto !important; /* Maintain aspect ratio */
+  width: 100% !important;
+  /* Ensure canvas takes full width */
+  height: auto !important;
+  /* Maintain aspect ratio */
 }
 
 
@@ -300,7 +290,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   gap: 3rem;
-
+  align-items: center;
 
   margin: 0 auto !important;
 
@@ -333,6 +323,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  width: 45%;
 }
 
 .donut-chart {
@@ -426,20 +417,23 @@ body {
 
 .main-div-names {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 55px;
+  width: 100%;
 }
 
 .sub-div-name-one {
-  width: 37%;
+  width: 30%;
   padding-bottom: 15px;
   border-bottom: 15px solid #003087;
+  text-align: center;
 }
 
 .sub-div-name-tow {
-  width: 37%;
+  width: 30%;
   padding-bottom: 15px;
   border-bottom: 15px solid #cf2e2e;
+  text-align: center;
 }
 
 .p-name-one {
@@ -564,9 +558,8 @@ body {
   margin-right: 50px;
 }
 
-.p-color-section3
-{
-color: #bb3131
+.p-color-section3 {
+  color: #bb3131
 }
 
 
@@ -710,68 +703,68 @@ color: #bb3131
 
 @media screen and (min-width: 1440px) {
   .hero-section {
-      height: 1254px;
+    height: 1254px;
   }
 
   .overlay img {
-      width: 53%;
-      margin-top: 698px;
+    width: 53%;
+    margin-top: 698px;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .hero-section {
-      height: 800px;
+    height: 800px;
   }
 
   .overlay img {
-      width: 50%;
-      margin-top: 285px;
+    width: 50%;
+    margin-top: 285px;
   }
 
   .countdown-container {
-      gap: 1px;
+    gap: 1px;
   }
 
   .label {
-      font-size: 20px;
-      color: #303030;
+    font-size: 20px;
+    color: #303030;
   }
 
   .number {
-      font-size: 23px;
+    font-size: 23px;
   }
 }
 
 @media screen and (max-width: 1023px) {
   .hero-section {
-      height: 100vh;
-      min-height: 800px;
+    height: 100vh;
+    min-height: 800px;
   }
 
   .overlay img {
-      width: 80%;
-      margin-top: 200px;
+    width: 80%;
+    margin-top: 200px;
   }
 
   .countdown-container {
-      gap: 1px;
+    gap: 1px;
   }
 
   .label {
-      font-size: 1.25rem;
+    font-size: 1.25rem;
   }
 
   .number {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .stats-container {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .time-filter {
-      max-width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -779,121 +772,121 @@ color: #bb3131
 
 
   .hero-section {
-      height: 100vh;
-      min-height: 600px;
+    height: 100vh;
+    min-height: 600px;
   }
 
   .overlay img {
-      width: 90%;
-      margin-top: 150px;
+    width: 90%;
+    margin-top: 150px;
   }
 
   .countdown-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 
   .time-unit {
-      flex-direction: column;
-      gap: 0.25rem;
+    flex-direction: column;
+    gap: 0.25rem;
   }
 
   .label {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .number {
-      font-size: 1.25rem;
+    font-size: 1.25rem;
   }
 
   .separator {
-      display: none;
+    display: none;
   }
 
   .stats-section {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .table-row,
   .table-header {
 
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .candidates-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
 
   }
 
   .sub-subjects-div {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 
   .chart-container-x {
-      width: 290px;
-      height: 245px;
-      margin: 0 auto;
-      text-align: center;
-      margin-top: 45px;
+    width: 290px;
+    height: 245px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 45px;
   }
 
   .candidates-images-div span {
-      font-size: 18px;
-      color: #1348b5;
-      font-weight: 700;
-      margin-top: 25px;
+    font-size: 18px;
+    color: #1348b5;
+    font-weight: 700;
+    margin-top: 25px;
   }
 
   .p-name-one {
-      font-size: 16px;
-      color: #003087;
+    font-size: 16px;
+    color: #003087;
   }
 
   .p-name-tow {
-      font-size: 16px;
-      color: #cf2e2e;
+    font-size: 16px;
+    color: #cf2e2e;
   }
 
   .section-title {
-      color: #003087;
-      font-size: 32px;
-      margin-bottom: 1rem;
+    color: #003087;
+    font-size: 32px;
+    margin-bottom: 1rem;
   }
 
   .table-marge {
-      margin-right: 0px;
+    margin-right: 0px;
   }
 
   .donut-chart {
-      position: relative;
-      width: 250px;
-      height: 250px;
+    position: relative;
+    width: 250px;
+    height: 250px;
   }
 
   .chart-container {
-      width: 250px;
-      height: 250px;
-      position: relative;
+    width: 250px;
+    height: 250px;
+    position: relative;
   }
 
   .last-h1 {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 16px;
-      padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    padding: 15px;
   }
 
   .line-div {
-      margin-top: 60px;
-      margin-bottom: 60px;
-      display: block;
-      box-sizing: border-box;
-      height: 400px;
-      width: 800px;
-      overflow-x: scroll;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: block;
+    box-sizing: border-box;
+    height: 400px;
+    width: 800px;
+    overflow-x: scroll;
   }
 
 
@@ -902,61 +895,61 @@ color: #bb3131
 @media screen and (max-width: 480px) {
 
   .hero-section {
-      min-height: 500px;
+    min-height: 500px;
   }
 
   .overlay img {
-      width: 95%;
-      margin-top: 100px;
+    width: 95%;
+    margin-top: 100px;
   }
 
   .countdown-container {
-      padding: 0.5rem;
+    padding: 0.5rem;
   }
 
   .stats-section {
-      padding: 0.5rem;
+    padding: 0.5rem;
   }
 
   .stats-table {
-      padding: 1rem;
+    padding: 1rem;
   }
 
   .table-row,
   .table-header {
-      font-size: 11px;
-      padding: 0.75rem;
-      width: 100%;
+    font-size: 11px;
+    padding: 0.75rem;
+    width: 100%;
   }
 
   .cell img {
-      width: 16px;
-      height: 16px;
+    width: 16px;
+    height: 16px;
   }
 
   .time-filter {
-      padding: 20px;
+    padding: 20px;
   }
 
   .time-filter h2 {
-      font-size: 1.2rem;
-      margin: 0px;
+    font-size: 1.2rem;
+    margin: 0px;
   }
 
   .time-filter p {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   .date-field input {
-      padding: 0.5rem;
+    padding: 0.5rem;
   }
 
   .apply-btn {
-      padding: 0.5rem;
-      font-size: 0.9rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
   }
 
   .date-inputs {
-      margin: 20px 0px;
+    margin: 20px 0px;
   }
 }

@@ -321,15 +321,12 @@ function getResultChartDataSet(filteredData) {
 
   ctx.chart = chart;
 }
-
 function getTopicsWithNumbersDataSet(filteredData) {
-  // Create an array to store sentiments for each topic
   const sentimentArray = {};
 
   // Initialize sentiment counts for each topic
   filteredData.forEach((element) => {
     const topic = element.topic;
-    // Initialize if not already present
     if (!sentimentArray[topic]) {
       sentimentArray[topic] = {
         Trump: { Positive: 0, Negative: 0, Neutral: 0 },
@@ -343,7 +340,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     } else if (element.Trump === "Bad") {
       sentimentArray[topic].Trump.Negative += 1;
     } else {
-      sentimentArray[topic].Trump.Neutral += 1; // Assuming there's a neutral case
+      sentimentArray[topic].Trump.Neutral += 1;
     }
 
     // Count sentiments for Harris
@@ -352,11 +349,10 @@ function getTopicsWithNumbersDataSet(filteredData) {
     } else if (element.Harris === "Bad") {
       sentimentArray[topic].Harris.Negative += 1;
     } else {
-      sentimentArray[topic].Harris.Neutral += 1; // Assuming there's a neutral case
+      sentimentArray[topic].Harris.Neutral += 1;
     }
   });
 
-  // Convert sentiment counts to percentages
   const finalSentimentArray = Object.keys(sentimentArray).map((topic) => {
     const trumpCounts = sentimentArray[topic].Trump;
     const harrisCounts = sentimentArray[topic].Harris;
@@ -366,28 +362,48 @@ function getTopicsWithNumbersDataSet(filteredData) {
     const totalHarris =
       harrisCounts.Positive + harrisCounts.Negative + harrisCounts.Neutral;
 
-    // Calculate percentages for Trump
+    // Calculate percentages for Trump with raw counts
     const trumpPercentages = [
-      totalTrump ? ((trumpCounts.Neutral / totalTrump) * 100).toFixed(2) : "0%", // Neutral
-      totalTrump
-        ? ((trumpCounts.Negative / totalTrump) * 100).toFixed(2)
-        : "0%", // Negative
-      totalTrump
-        ? ((trumpCounts.Positive / totalTrump) * 100).toFixed(2)
-        : "0%", // Positive
+      {
+        percentage: totalTrump
+          ? ((trumpCounts.Neutral / totalTrump) * 100).toFixed(2)
+          : "0",
+        count: trumpCounts.Neutral,
+      },
+      {
+        percentage: totalTrump
+          ? ((trumpCounts.Negative / totalTrump) * 100).toFixed(2)
+          : "0",
+        count: trumpCounts.Negative,
+      },
+      {
+        percentage: totalTrump
+          ? ((trumpCounts.Positive / totalTrump) * 100).toFixed(2)
+          : "0",
+        count: trumpCounts.Positive,
+      },
     ];
 
-    // Calculate percentages for Harris
+    // Calculate percentages for Harris with raw counts
     const harrisPercentages = [
-      totalHarris
-        ? ((harrisCounts.Neutral / totalHarris) * 100).toFixed(2)
-        : "0%", // Neutral
-      totalHarris
-        ? ((harrisCounts.Negative / totalHarris) * 100).toFixed(2)
-        : "0%", // Negative
-      totalHarris
-        ? ((harrisCounts.Positive / totalHarris) * 100).toFixed(2)
-        : "0%", // Positive
+      {
+        percentage: totalHarris
+          ? ((harrisCounts.Neutral / totalHarris) * 100).toFixed(2)
+          : "0",
+        count: harrisCounts.Neutral,
+      },
+      {
+        percentage: totalHarris
+          ? ((harrisCounts.Negative / totalHarris) * 100).toFixed(2)
+          : "0",
+        count: harrisCounts.Negative,
+      },
+      {
+        percentage: totalHarris
+          ? ((harrisCounts.Positive / totalHarris) * 100).toFixed(2)
+          : "0",
+        count: harrisCounts.Positive,
+      },
     ];
 
     return {
@@ -403,7 +419,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Election Integrity")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Election Integrity',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Election Integrity")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -411,7 +434,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Charisma")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Charisma',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Charisma")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -419,7 +449,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Economy")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Economy',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Economy")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -427,7 +464,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Foreign Policy")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Foreign Policy',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Foreign Policy")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -435,7 +479,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Social Issues")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Social Issues',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Social Issues")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -443,7 +494,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Immigration")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Immigration',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Immigration")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -451,7 +509,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Healthcare")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Healthcare',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Healthcare")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -459,7 +524,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Environment")
-        .map((x) => x.Harris)[0],
+        .map((x) => x.Harris)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Environment',
+      //   candidate: 'Harris',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Environment")
+        .map((x) => x.Harris)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -467,7 +539,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Election Integrity")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Election Integrity',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Election Integrity")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -475,7 +554,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Charisma")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Charisma',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Charisma")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -483,7 +569,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Economy")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Economy',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Economy")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -491,7 +584,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Foreign Policy")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Foreign Policy',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Foreign Policy")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -499,7 +599,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Social Issues")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Social Issues',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Social Issues")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -507,7 +614,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Immigration")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Immigration',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Immigration")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -515,7 +629,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Healthcare")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Healthcare',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Healthcare")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
     {
@@ -523,7 +644,14 @@ function getTopicsWithNumbersDataSet(filteredData) {
       labels: ["طبيعي", "سلبي", "ايجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Environment")
-        .map((x) => x.Trump)[0],
+        .map((x) => x.Trump)[0]
+        .map((x) => x.percentage),
+      //   topic: 'Environment',
+      //   candidate: 'Trump',
+      counts: finalSentimentArray
+        .filter((x) => x.topic == "Environment")
+        .map((x) => x.Trump)[0]
+        .map((x) => x.count),
       backgroundColor: ["#afafaf", "#bb3131", "#00a1ab"],
     },
   ];
@@ -532,14 +660,17 @@ function getTopicsWithNumbersDataSet(filteredData) {
   chartDataArray.forEach(createHorizontalBarChart);
 }
 
-// Function to create charts
 function createHorizontalBarChart(chartConfig) {
   const ctx = document.getElementById(chartConfig.id).getContext("2d");
 
-  // Check if there is an existing chart
   if (ctx.chart) {
-    ctx.chart.destroy(); // Destroy the existing chart instance
+    ctx.chart.destroy();
   }
+
+  // Combine labels with their respective counts
+  const formattedLabels = chartConfig.labels.map(
+    (label, index) => `${label} (${chartConfig.counts[index]})`
+  );
 
   ctx.chart = new Chart(ctx, {
     type: "bar",
@@ -557,55 +688,57 @@ function createHorizontalBarChart(chartConfig) {
       ],
     },
     options: {
-      indexAxis: "y", // Makes the chart horizontal
+      indexAxis: "y",
       responsive: true,
       maintainAspectRatio: false,
       scales: {
         x: {
           beginAtZero: true,
-          max: 100, // Set to 100 for percentage scale
-          reverse: true, // This makes the chart go from right to left
-          position: "bottom", // Moves the X-axis to the bottom of the chart
+          max: 100,
+          reverse: true,
+          position: "bottom",
           ticks: {
             callback: function (value) {
-              return value + "%"; // Add percentage sign to ticks
+              return value + "%";
             },
-            padding: 10, // Adds spacing between the bars and labels
+            padding: 10,
             font: {
               family: "Arial",
               size: 12,
-              weight: "bold", // Makes the font bold
+              weight: "bold",
             },
           },
           grid: {
-            display: false, // Hides the grid lines for the x-axis
+            display: false,
           },
         },
         y: {
           beginAtZero: true,
-          reverse: true, // Reverses order of categories for RTL display
-          position: "right", // Moves Y-axis labels to the right side of the chart
+          reverse: true,
+          position: "right",
           ticks: {
-            padding: 10, // Adds spacing between the bars and labels
+            padding: 10,
             font: {
               family: "Arial",
               size: 15,
-              weight: "bold", // Makes the font bold
+              weight: "bold",
             },
           },
           grid: {
-            display: false, // Hides the grid lines for the y-axis
+            display: false,
           },
         },
       },
       plugins: {
         legend: {
-          display: false, // Hides the legend
+          display: false,
         },
         tooltip: {
           callbacks: {
             label: function (context) {
-              return context.raw + "%";
+              const index = context.dataIndex;
+              const label = formattedLabels[index];
+              return [label, `${context.raw}%`];
             },
           },
         },
@@ -613,6 +746,21 @@ function createHorizontalBarChart(chartConfig) {
     },
   });
 }
+
+const colorPalette = [
+  "#36A2EB40",
+  "#FF638440",
+  "#FFCE5640",
+  "#4BC0C040",
+  "#9966FF40",
+  "#FF9F4040",
+  "#4CAF5040",
+  "#FFC10740",
+  "#E91E6340",
+  "#9C27B040",
+  "#2196F340",
+  "#FF572240",
+];
 
 function getTopicsCountPerMonth(filteredData) {
   // كائن لحفظ عدد المواضيع حسب الشهر
