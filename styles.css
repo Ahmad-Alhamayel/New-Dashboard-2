@@ -697,6 +697,19 @@ body {
 
 
 
+.custom-confirm-button {
+  background-color: #003087;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-confirm-button:hover {
+  background-color: #0056b3;
+  /* لون الزر عند التمرير */
+}
+
 
 
 

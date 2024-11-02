@@ -667,9 +667,8 @@ function createHorizontalBarChart(chartConfig) {
     ctx.chart.destroy();
   }
 
-  // Combine labels with their respective counts
   const formattedLabels = chartConfig.labels.map(
-    (label, index) => `${label} (${chartConfig.counts[index]})`
+    (label, index) => `(${chartConfig.counts[index]})`
   );
 
   ctx.chart = new Chart(ctx, {
@@ -738,7 +737,7 @@ function createHorizontalBarChart(chartConfig) {
             label: function (context) {
               const index = context.dataIndex;
               const label = formattedLabels[index];
-              return [label, `${context.raw}%`];
+              return [`عدد المقالات: ${label}`, `النسبة: %${context.raw}`];
             },
           },
         },
@@ -906,4 +905,29 @@ document.addEventListener("click", function (event) {
   ) {
     popup.classList.remove("show");
   }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  Swal.fire({
+    title: "تنويه",
+    html: `
+          <div style="padding-left: 20px; padding-right: 20px; direction: rtl; text-align: right;">
+            <p>تم تطوير هذا الموقع والأبحاث المعروضة عليه لأغراض معلوماتية وتعليمية فقط ومن قبل فريق مستقل من الباحثين، ومساعدة صحفيين من شبكة الجزيرة. يهدف هذا البحث إلى تحليل وقياس مشاعر وتوجهات الإعلام في تغطية الانتخابات الأمريكية لعام 2024 باستخدام الذكاء الاصطناعي.</p>
+            <p>لذلك نود التأكيد على النقاط التالية:</p>
+            <ul style="font-size: 16px; line-height: 1.5;">
+              <li><strong>بحث غير ربحي:</strong> هذا المشروع غير تجاري. ولا يسعى القائمون عليه لتحقيق الربح، ولا يدعمون أي حزب سياسي أو مرشح أو أجندة معينة.</li>
+              <li><strong>تحليل مستقل:</strong> التحليلات والرؤى المستخرجة من البحث مستقلة وتستهدف تقديم مؤشرات حول توجهات الإعلام بدون أي تحيز. وعلى الرغم من حرصنا على الدقة، فإن النتائج مستمدة من خوارزميات الذكاء الاصطناعي التي قد تنطوي على بعض القيود، وبالتالي لا يمكننا ضمان دقة أو شمولية النتائج.</li>
+              <li><strong>عدم التأييد أو الانتماء لجهة أو شخص:</strong> هذا البحث غير مرتبط بشبكة الجزيرة ولا يعبر عن الآراء الرسمية أو السياسات أو الموقف التحريري للشبكة. تم تقديم مساهمات الصحفيين بشكل تطوعي ومستقل.</li>
+              <li><strong>ليس بديلاً عن الاستشارة المهنية:</strong> المعلومات والرؤى المقدمة هنا لا تعتبر بديلاً عن النصائح المهنية أو المالية أو القانونية أو السياسية. لأي قرارات شخصية أو مهنية، لذلك يرجى استشارة خبير مؤهل.</li>
+              <li><strong>قيود الذكاء الاصطناعي والبيانات:</strong> استخدام الذكاء الاصطناعي في تحليل التوجهات العاطفية يعتمد على تقنيات معقدة ومتطورة. وبالتالي، فإن النتائج المقدمة هي نتائج تفسيرية وقد لا تعكس الصورة الكاملة لتوجهات الإعلام أو الرأي العام. يُرجى استخدام هذا البحث مع فهمٍ أنه يعتمد على البيانات المتاحة وطبيعة تقنيات الذكاء الاصطناعي المتطورة.</li>
+            </ul>
+            <p>بدخولك إلى هذا الموقع، فإنك توافق على هذه الشروط وتدرك الطبيعة البحثية المستقلة للمشروع. لأي استفسارات أو ملاحظات، يُرجى التواصل معنا مباشرة.</p>
+          </div>
+        `,
+    confirmButtonText: "موافق",
+    width: "90%",
+    customClass: {
+      confirmButton: "custom-confirm-button",
+    },
+  });
 });
