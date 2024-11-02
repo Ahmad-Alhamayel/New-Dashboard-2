@@ -90,10 +90,42 @@ function translateTopic(topic) {
 
 // Initialize date inputs when the page is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("startDate").value = "2024-01-01";
+  const startDate = document.getElementById("startDate");
+  const endDate = document.getElementById("endDate");
+
+  // تعيين القيم الافتراضية
   const today = new Date();
-  const formattedDate = today.toISOString().split("T")[0];
-  document.getElementById("endDate").value = formattedDate;
+  const formattedToday = today.toISOString().split("T")[0];
+  startDate.value = "2024-01-01";
+  endDate.value = formattedToday;
+
+  // تعيين الحدود
+  startDate.setAttribute("min", startDate.value);
+  startDate.setAttribute("max", formattedToday);
+  endDate.setAttribute("min", startDate.value);
+  endDate.setAttribute("max", formattedToday);
+
+  // دالة لتحديث الحدود بناءً على المدخلات
+  function updateDateLimits() {
+    const startValue = startDate.value;
+    const endValue = endDate.value;
+
+    endDate.setAttribute("min", startValue || "2024-01-01");
+    startDate.setAttribute("max", endValue || formattedToday);
+  }
+
+  // تحديث الحدود عند تغيير أي من الحقلين
+  startDate.addEventListener("change", updateDateLimits);
+  endDate.addEventListener("change", updateDateLimits);
+
+  startDate.addEventListener("click", function () {
+    startDate.showPicker();
+  });
+
+  endDate.addEventListener("click", function () {
+    endDate.showPicker();
+  });
+
   loadDataAndFilter(); // Load initial data
 });
 
@@ -336,10 +368,10 @@ function getTopicsWithNumbersDataSet(filteredData) {
 
     // Calculate percentages for Trump
     const trumpPercentages = [
+      totalTrump ? ((trumpCounts.Neutral / totalTrump) * 100).toFixed(2) : "0%", // Neutral
       totalTrump
         ? ((trumpCounts.Negative / totalTrump) * 100).toFixed(2)
         : "0%", // Negative
-      totalTrump ? ((trumpCounts.Neutral / totalTrump) * 100).toFixed(2) : "0%", // Neutral
       totalTrump
         ? ((trumpCounts.Positive / totalTrump) * 100).toFixed(2)
         : "0%", // Positive
@@ -348,11 +380,11 @@ function getTopicsWithNumbersDataSet(filteredData) {
     // Calculate percentages for Harris
     const harrisPercentages = [
       totalHarris
-        ? ((harrisCounts.Negative / totalHarris) * 100).toFixed(2)
-        : "0%", // Negative
-      totalHarris
         ? ((harrisCounts.Neutral / totalHarris) * 100).toFixed(2)
         : "0%", // Neutral
+      totalHarris
+        ? ((harrisCounts.Negative / totalHarris) * 100).toFixed(2)
+        : "0%", // Negative
       totalHarris
         ? ((harrisCounts.Positive / totalHarris) * 100).toFixed(2)
         : "0%", // Positive
@@ -710,3 +742,20 @@ function getTransparentColor(color, opacity) {
   }
   return color; // Fallback to original color if it doesn't match
 }
+
+function togglePopup() {
+  const popup = document.getElementById("contactPopup");
+  popup.classList.toggle("show");
+}
+
+document.addEventListener("click", function (event) {
+  const popup = document.getElementById("contactPopup");
+  const floatContact = document.querySelector(".float-contact");
+
+  if (
+    !floatContact.contains(event.target) &&
+    popup.classList.contains("show")
+  ) {
+    popup.classList.remove("show");
+  }
+});

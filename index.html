@@ -63,11 +63,11 @@
                     <div class="date-inputs">
                         <div class="date-field">
                             <label class="label-filter">من تاريخ</label>
-                            <input type="date" id="startDate" placeholder="mm/dd/yyyy">
+                            <input type="date" id="startDate" placeholder="dd/mm/yyyy">
                         </div>
                         <div class="date-field">
                             <label class="label-filter">الى تاريخ</label>
-                            <input type="date" id="endDate" placeholder="mm/dd/yyyy">
+                            <input type="date" id="endDate" placeholder="dd/mm/yyyy">
                         </div>
                     </div>
                     <button class="apply-btn">تطبيق</button>
@@ -330,7 +330,46 @@
 
     </main>
 
-
+    <div class="float-contact">
+        <button class="contact-btn" onclick="togglePopup()">تواصل معنا</button>
+    
+        <div class="contact-popup" id="contactPopup">
+            <div class="popup-header">
+                <h3>معلومات التواصل</h3>
+                <button class="close-btn" onclick="togglePopup()">×</button>
+            </div>
+    
+            <div class="popup-content">
+                <div class="contact-card">
+                    <div class="contact-name">Ahmad Alhamayel</div>
+                    <div class="contact-info">
+                        <div>
+                            <span>Email:</span>
+                            <a href="mailto:alhamayel3@gmail.com">alhamayel3@gmail.com</a>
+                        </div>
+                        <div>
+                            <span>LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/ahmad-alhamayel-3a9a79180/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="contact-card">
+                    <div class="contact-name">Fahad Jubair</div>
+                    <div class="contact-info">
+                        <div>
+                            <span>Email:</span>
+                            <a href="mailto:fjubair@gmail.com">fjubair@gmail.com</a>
+                        </div>
+                        <div>
+                            <span>LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/fahed-jubair-52b84882/" target="_blank">LinkedIn Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
