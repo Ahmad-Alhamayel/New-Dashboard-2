@@ -29,10 +29,10 @@ app.get('/api/polaritydata', async (req, res) => {
     }
 });
 
-// const server = http.createServer(app);
-// server.listen(5000, () => {
-//   console.log(`Server is listening on port ${5000}`);
-// });
+const server = http.createServer(app);
+server.listen(5000, () => {
+  console.log(`Server is listening on port ${5000}`);
+});
 
 // Export the app for serverless function in Vercel
 module.exports = app;
