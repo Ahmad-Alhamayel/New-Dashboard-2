@@ -105,15 +105,12 @@ body {
 } */
 
 .stats-container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  /* Ensure layout is side-by-side on desktop */
   gap: 2rem;
   align-items: stretch;
-  /* Updated from center to stretch */
-  text-align: center;
+  /* Makes both sections have equal height */
 }
 
 .stats-table,
