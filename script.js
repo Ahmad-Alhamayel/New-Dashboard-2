@@ -807,18 +807,18 @@ function getTopicsCountPerMonth(filteredData) {
     return `${monthTranslations[monthName]} ${year}`;
   });
 
-  const datasets = Object.keys(monthlyNewsCounts).map((topic) => {
+  const datasets = Object.keys(monthlyNewsCounts).map((topic, index) => {
     const data = uniqueMonths.map(
       (month) => monthlyNewsCounts[topic][month] || 0
     );
-    const color = getRandomColor(); // Get random color for borders
+    const color = colorPalette[index];
 
     return {
       label: translateTopic(topic),
       data: data,
       fill: true, // Enable fill under the line
       borderColor: color, // Border color
-      backgroundColor: getTransparentColor(color, 0.2), // Background color with transparency
+      backgroundColor: getTransparentColor(color, 0.9), // Background color with transparency
       tension: 0.3,
     };
   });
