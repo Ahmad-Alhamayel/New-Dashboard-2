@@ -111,16 +111,15 @@ body {
   margin: 0 auto;
   display: flex;
   gap: 2rem;
+  align-items: stretch;
+  /* Updated from center to stretch */
+  text-align: center;
 }
-
 
 .stats-table,
 .time-filter {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
-  flex: 1;
-    /* Each section takes up equal width */
-  height: 100%;
 }
 
 /* تنسيق الجدول */
