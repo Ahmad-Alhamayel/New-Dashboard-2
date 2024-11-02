@@ -107,19 +107,23 @@ body {
 .stats-container {
   display: flex;
   flex-direction: row;
-  /* Ensures side-by-side layout */
+  /* Side-by-side layout for desktop */
   gap: 2rem;
   /* Space between the sections */
   align-items: stretch;
-  /* Ensures equal height */
+  /* Ensures both sections have the same height */
   max-width: 1200px;
   margin: 0 auto;
 }
+
 
 .stats-table,
 .time-filter {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
+  flex: 1;
+    /* Each section takes up equal width */
+  height: 100%;
 }
 
 /* تنسيق الجدول */
