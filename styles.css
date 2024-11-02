@@ -105,15 +105,12 @@ body {
 } */
 
 .stats-container {
-  display: flex;
-  flex-direction: row;
-  /* Side-by-side layout for desktop */
-  gap: 2rem;
-  /* Space between the sections */
-  align-items: stretch;
-  /* Ensures both sections have the same height */
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  gap: 2rem;
 }
 
 
