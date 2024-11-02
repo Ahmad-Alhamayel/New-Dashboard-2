@@ -171,7 +171,6 @@ function loadDataAndFilter() {
 function updateDataAndFilter(data) {
   const startDate = new Date(document.getElementById("startDate").value);
   const endDate = new Date(document.getElementById("endDate").value);
-  console.log("updateDataAndFilter", data);
   // Filter data based on the date range
   const filteredData = data.filter((element) => {
     const publishDate = new Date(element.publish_date);
@@ -921,7 +920,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><strong>ليس بديلاً عن الاستشارة المهنية:</strong> المعلومات والرؤى المقدمة هنا لا تعتبر بديلاً عن النصائح المهنية أو المالية أو القانونية أو السياسية. لأي قرارات شخصية أو مهنية، لذلك يرجى استشارة خبير مؤهل.</li>
               <li><strong>قيود الذكاء الاصطناعي والبيانات:</strong> استخدام الذكاء الاصطناعي في تحليل التوجهات العاطفية يعتمد على تقنيات معقدة ومتطورة. وبالتالي، فإن النتائج المقدمة هي نتائج تفسيرية وقد لا تعكس الصورة الكاملة لتوجهات الإعلام أو الرأي العام. يُرجى استخدام هذا البحث مع فهمٍ أنه يعتمد على البيانات المتاحة وطبيعة تقنيات الذكاء الاصطناعي المتطورة.</li>
             </ul>
-            <p>بدخولك إلى هذا الموقع، فإنك تقر بأنك مدرك للطبيعة البحثية المستقلة للمشروع. لأي استفسارات أو ملاحظات، يُرجى التواصل معنا مباشرة.</p>
+            <p>بدخولك إلى هذا الموقع، فإنك تقر بأنك على دراية بالطبيعة البحثية المستقلة للمشروع. لأي استفسارات أو ملاحظات، يُرجى التواصل معنا مباشرة.</p>
           </div>
         `,
     confirmButtonText: "موافق",
