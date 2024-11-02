@@ -910,7 +910,7 @@ document.addEventListener("DOMContentLoaded", function () {
   Swal.fire({
     title: "تنويه",
     html: `
-          <div style="padding-left: 20px; padding-right: 20px; direction: rtl; text-align: right;">
+          <div style="padding-left: 20px; padding-right: 20px; direction: rtl; text-align: right;" >
             <p>تم تطوير هذا الموقع والأبحاث المعروضة عليه لأغراض معلوماتية وتعليمية فقط ومن قبل فريق مستقل من الباحثين، ومساعدة صحفيين من شبكة الجزيرة. يهدف هذا البحث إلى تحليل وقياس مشاعر وتوجهات الإعلام في تغطية الانتخابات الأمريكية لعام 2024 باستخدام الذكاء الاصطناعي.</p>
             <p>لذلك نود التأكيد على النقاط التالية:</p>
             <ul style="font-size: 16px; line-height: 1.5;">
