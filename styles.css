@@ -598,6 +598,7 @@ body {
 
 .contact-btn {
   background-color: #000000;
+  font-family: "Cairo", sans-serif;
   /* تغيير لون الخلفية إلى أسود */
   color: white;
   border: none;
