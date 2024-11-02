@@ -105,21 +105,24 @@ body {
 } */
 
 .stats-container {
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* Ensures both sections have the same height */
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  gap: 2rem;
-  align-items: stretch;
-  /* Updated from center to stretch */
-  text-align: center;
 }
 
-.stats-table,
-.time-filter {
+/* Set equal flex-basis for time-filter and stats-table */
+.time-filter,
+.stats-table {
+  flex: 1;
+  /* Each section takes up equal width */
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* تنسيق الجدول */
