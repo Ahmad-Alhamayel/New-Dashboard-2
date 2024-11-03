@@ -415,7 +415,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
   const chartDataArray = [
     {
       id: "myHorizontalBarChart",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Election Integrity")
         .map((x) => x.Harris)[0]
@@ -430,7 +430,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart2",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Charisma")
         .map((x) => x.Harris)[0]
@@ -445,7 +445,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart3",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Economy")
         .map((x) => x.Harris)[0]
@@ -460,7 +460,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart4",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Foreign Policy")
         .map((x) => x.Harris)[0]
@@ -475,7 +475,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart5",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Social Issues")
         .map((x) => x.Harris)[0]
@@ -490,7 +490,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart6",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Immigration")
         .map((x) => x.Harris)[0]
@@ -505,7 +505,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart7",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Healthcare")
         .map((x) => x.Harris)[0]
@@ -520,7 +520,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart8",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Environment")
         .map((x) => x.Harris)[0]
@@ -535,7 +535,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart0",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Election Integrity")
         .map((x) => x.Trump)[0]
@@ -550,7 +550,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart20",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Charisma")
         .map((x) => x.Trump)[0]
@@ -565,7 +565,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart30",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Economy")
         .map((x) => x.Trump)[0]
@@ -580,7 +580,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart40",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Foreign Policy")
         .map((x) => x.Trump)[0]
@@ -595,7 +595,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart50",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Social Issues")
         .map((x) => x.Trump)[0]
@@ -610,7 +610,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart60",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Immigration")
         .map((x) => x.Trump)[0]
@@ -625,7 +625,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart70",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Healthcare")
         .map((x) => x.Trump)[0]
@@ -640,7 +640,7 @@ function getTopicsWithNumbersDataSet(filteredData) {
     },
     {
       id: "myHorizontalBarChart80",
-      labels: ["طبيعي", "سلبي", "إيجابي"],
+      labels: ["محايد", "سلبي", "إيجابي"],
       data: finalSentimentArray
         .filter((x) => x.topic == "Environment")
         .map((x) => x.Trump)[0]
