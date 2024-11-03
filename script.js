@@ -96,11 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // تعيين القيم الافتراضية
   const today = new Date();
   const formattedToday = today.toISOString().split("T")[0];
-  startDate.value = "2024-01-01";
+  const defaultStartDate = new Date(today.getFullYear(), 6, 1); // July 1st
+  const formattedStartDate = defaultStartDate.toISOString().split("T")[0];
+  startDate.value = formattedStartDate; // Set start date to July 1st by default
   endDate.value = formattedToday;
 
   // تعيين الحدود
-  startDate.setAttribute("min", startDate.value);
+  startDate.setAttribute("min", "2024-01-01");
   startDate.setAttribute("max", formattedToday);
   endDate.setAttribute("min", startDate.value);
   endDate.setAttribute("max", formattedToday);
